@@ -1,0 +1,35 @@
+{
+  "name": "gatsby-plugin-dev-ribbon",
+  "version": "1.0.0",
+  "description": "Add a development ribbon to your Gatsby site.",
+  "author": "Jun Fukagawa",
+  "license": "MIT",
+  "keywords": [
+    "gatsby",
+    "gatsby-plugin",
+    "ribbon"
+  ],
+  "dependencies": {
+    "@emotion/babel-plugin": "^11.7.2",
+    "@emotion/react": "^11.8.2",
+    "core-js": "3",
+    "prop-types": "^15.8.1"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.17.6",
+    "@babel/core": "^7.17.8",
+    "@babel/preset-env": "^7.16.11",
+    "@babel/preset-react": "^7.16.7",
+    "@emotion/babel-preset-css-prop": "^11.2.0",
+    "babel-preset-gatsby-package": "^2.11.0",
+    "gatsby": "^4.11.0",
+    "react": "^18.0.0"
+  },
+  "scripts": {
+    "build": "babel ./src --out-dir .",
+    "watch": "yarn build --watch"
+  },
+  "peerDependencies": {
+    "gatsby": "^3.0.0 || ^4.0.0"
+  }
+}

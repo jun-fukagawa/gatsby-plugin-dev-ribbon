@@ -1,0 +1,31 @@
+{
+  "presets": [
+    [
+      "@babel/preset-env",
+      {
+        "useBuiltIns": "usage",
+        "corejs": {
+          "version": 3
+        },
+        "modules": false
+      }
+    ],
+    "@babel/preset-typescript",
+    [
+      "@babel/preset-react",
+      {
+        "runtime": "automatic",
+        "importSource": "@emotion/react"
+      }
+    ]
+  ],
+  "plugins": [
+    [
+      "@emotion/babel-plugin",
+      {
+        "sourceMap": false,
+        "autoLabel": "always"
+      }
+    ]
+  ]
+}

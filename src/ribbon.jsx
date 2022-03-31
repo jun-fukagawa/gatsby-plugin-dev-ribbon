@@ -48,7 +48,7 @@ const styles = {
   wrapper: css`
     width: 150px;
     height: 150px;
-    position: absolute;
+    position: fixed;
     overflow: hidden;
     z-index: 9999;
     pointer-events: none;

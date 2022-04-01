@@ -2,7 +2,6 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { css } from '@emotion/react'
 
-
 const camelCase = (str) => {
   str = str.charAt(0).toLowerCase() + str.slice(1)
   return str.replace(/[-_](.)/g, (match, p1) => p1.toUpperCase())
@@ -22,17 +21,29 @@ const Ribbon = ({ text, position, color }) => {
   const [visible, setVisible] = React.useState(true)
   const wrapperPosition = React.useMemo(() => `wrapper${pascalCase(position)}`, [position])
   const ribbonPosition = React.useMemo(() => `ribbon${pascalCase(position)}`, [position])
+  const backgroundColor = React.useMemo(
+    () => css`
+      background-color: ${color};
+    `,
+    [color]
+  )
+  const fontColor = React.useMemo(
+    () => css`
+      color: ${color === 'white' ? 'black' : 'white'};
+    `,
+    [color]
+  )
+  const hide = React.useCallback(() => {
+    setVisible(false)
+  }, [])
+  console.log({
+    visible,
+  })
   if (!visible) return null
   return (
     <div css={[styles.wrapper, styles[wrapperPosition]]}>
-      <div css={[styles.ribbon, css`
-        background-color: ${color};
-      `, styles[ribbonPosition]]}
-           onClick={() => setVisible(false)}
-      >
-        <span css={[styles.ribbonText, css`
-          color: ${color === 'white' ? 'black' : 'white'};
-        `]}>{text || 'dev'}</span>
+      <div css={[styles.ribbon, backgroundColor, styles[ribbonPosition]]} onClick={hide}>
+        <span css={[styles.ribbonText, fontColor]}>{text || 'dev'}</span>
       </div>
     </div>
   )
@@ -41,7 +52,7 @@ const Ribbon = ({ text, position, color }) => {
 Ribbon.propTypes = {
   text: PropTypes.string,
   position: PropTypes.oneOf([`left`, `right`, `left-bottom`, `right-bottom`]),
-  color: PropTypes.oneOf([`red`, `orange`, `green`, `black`, `darkblue`,`gray`, `white`]),
+  color: PropTypes.oneOf([`red`, `orange`, `green`, `black`, `darkblue`, `gray`, `white`]),
 }
 
 const styles = {
@@ -95,11 +106,11 @@ const styles = {
     background-color: #ea4335;
     background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.15));
     box-shadow: 0 2px 3px 0 rgb(0 0 0 / 50%);
-    font: 700 13px "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font: 700 13px 'Helvetica Neue', Helvetica, Arial, sans-serif;
     z-index: 9999;
     pointer-events: auto;
     opacity: 1;
-    transition: opacity .25s ease-in-out;
+    transition: opacity 0.25s ease-in-out;
 
     &:hover {
       opacity: 0.2;

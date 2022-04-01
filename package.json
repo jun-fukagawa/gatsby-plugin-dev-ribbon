@@ -1,6 +1,6 @@
 {
   "name": "gatsby-plugin-dev-ribbon",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Add a development ribbon to your Gatsby site.",
   "author": "Jun Fukagawa",
   "license": "MIT",

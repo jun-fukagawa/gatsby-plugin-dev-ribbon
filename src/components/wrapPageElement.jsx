@@ -1,5 +1,5 @@
-import React from 'react'
 import Ribbon from './ribbon'
+import React from 'react'
 
 const wrapPageElement = ({ element }, { position, color, text }) => {
   return (
@@ -10,4 +10,4 @@ const wrapPageElement = ({ element }, { position, color, text }) => {
   )
 }
 
-export { wrapPageElement }
+export default wrapPageElement

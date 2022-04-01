@@ -36,9 +36,6 @@ const Ribbon = ({ text, position, color }) => {
   const hide = React.useCallback(() => {
     setVisible(false)
   }, [])
-  console.log({
-    visible,
-  })
   if (!visible) return null
   return (
     <div css={[styles.wrapper, styles[wrapperPosition]]}>

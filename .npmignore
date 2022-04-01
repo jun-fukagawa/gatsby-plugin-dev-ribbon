@@ -15,4 +15,7 @@ sketch
 *.vsix
 
 src
+.babelrc
+.editorconfig
+.prettierrc.js
 yarn.lock

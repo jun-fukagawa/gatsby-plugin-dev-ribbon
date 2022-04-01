@@ -15,4 +15,4 @@ sketch
 *.vsix
 
 /gatsby-*.js
-/ribbon.js
+/components

@@ -13,9 +13,12 @@ sketch
 .history
 .ionide
 *.vsix
+*.tgz
 
 src
 .babelrc
 .editorconfig
 .prettierrc.js
 yarn.lock
+pnpm-lock.yaml
+pnpm-workspace.yaml
